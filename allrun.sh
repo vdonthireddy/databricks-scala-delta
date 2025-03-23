@@ -13,9 +13,7 @@ docker run -d \
 export SPARK_LOCAL_IP="127.0.0.1"
 
 # package the jar
-cd /Users/donthireddy/code/mygit/databricks-scala-delta
-mvn clean package
+cd /Users/donthireddy/code/mygit/databricks-scala-delta && mvn clean package
 
 # submit the jar file to spark (make sure to use the jar-with-dependencies)
-cd ~/code/spark-3.5.5-bin-hadoop3/
-spark-submit --jars /Users/donthireddy/code/mygit/databricks-scala-delta/libs/delta-spark_2.12-3.3.0.jar --class=com.niharsystems.Main /Users/donthireddy/code/mygit/databricks-scala-delta/target/databricks-scala-delta-1.0-SNAPSHOT-jar-with-dependencies.jar
+cd ~/code/spark-3.5.5-bin-hadoop3 && spark-submit --jars /Users/donthireddy/code/mygit/databricks-scala-delta/libs/delta-spark_2.12-3.3.0.jar --class=com.niharsystems.Main /Users/donthireddy/code/mygit/databricks-scala-delta/target/databricks-scala-delta-1.0-SNAPSHOT-jar-with-dependencies.jar

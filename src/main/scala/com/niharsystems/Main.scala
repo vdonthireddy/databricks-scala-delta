@@ -7,9 +7,9 @@ import org.apache.spark.sql.functions._
 
 object Main extends App {
     val deltaTableBucket = "s3a://vj-bucket"
-    val deltaTablePath = s"$deltaTableBucket/delta-table"
-    val onlyDisplay = true
-    val isInsert = !onlyDisplay && false
+    val deltaTablePath = s"$deltaTableBucket/delta-table-"+java.time.LocalDateTime.now.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd-HHmm"))
+    val onlyDisplay = false
+    val isInsert = !onlyDisplay && true
     val isUpdate = !onlyDisplay && !isInsert
     val isDelete = false
 
